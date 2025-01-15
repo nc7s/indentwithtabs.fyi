@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Indent with tabs</title>
+	<style>
+html, body {
+	margin: 0;
+	width: 100%;
+	min-height: 100%;
+	font-size: 16px;
+}
+
+main {
+	margin: 10% auto;
+	width: min(80ch, 80%);
+}
+
+a, a:visited {
+	color: inherit;
+}
+
+h1, h2, p, ul {
+	margin-top: 0;
+}
+
+pre {
+}
+	</style>
+</head>
+<body>
+<main>
+	<h1>Indent with tabs</h1>
+	<p>There are two uses of white space in source code: indentation and alignment.</p>
+	<p>Indentation expresses the <em>semantice level</em> of a source line. This task falls naturally onto tabs.</p>
+	<ul>
+		<li>Semantically correct: one tab is one level in; a space is separation of two words, and emptiness of a character wide.</li>
+		<li>Accessible: visually impaired people might have difficulty reading indentation too small, like 2-space; some might otherwise find indentation too large, like 8-space, too tiring to read. With tabs, they can freely adjust to their comfortable display width.</li>
+		<li>Respectful: with tabs, users could adjust their display width to their liking; spaces force author's preference onto them.</li>
+		<li>Less bytes: with 4-space indentation, a tab saves 3.</li>
+	</ul>
+	<p>If you have background in Web development or other computer layout systems, think of relative and absolute sizes. A tab is like <code>2rem</code>; a space is like <code>32px</code> or <code>32pt</code>.</p>
+	<h2><em>Align</em> with spaces</h2>
+	<p>Tabs are not ideal for alignment: if the content before it is longer than a tab's width, the following example that looks fine with tab width 4:
+	<pre style="tab-size: 4"><code>routers.add({
+	"/"						=> get_index,
+	"/transactions/{id}"	=> get_transaction,
+	"/account"				=> get_account,
+})</code></pre>
+	<p>.. looks terrible with tab width 8:</p>
+	<pre style="tab-size: 8"><code>routers.add({
+	"/"						=> get_index,
+	"/transactions/{id}"	=> get_transaction,
+	"/account"				=> get_account,
+})</code></pre>
+	<p>Here, spaces are more fit:</p>
+	<pre><code>routers.add({
+	"/"                  => get_index,
+	"/transactions/{id}" => get_transaction,
+	"/account"           => get_account,
+})</code></pre>
+	<hr>
+	<footer>This content is devoted to the public domain, under the <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a> license.</footer>
+</main>
+</body>
+</html>
